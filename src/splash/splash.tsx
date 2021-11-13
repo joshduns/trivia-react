@@ -4,17 +4,16 @@ import SplashHeader from './welcome';
 import Col from 'react-bootstrap/Col';
 
 
-class SplashCanvas extends React.Component {
-    render() {
-        return (
-            <div>
-                <SplashHeader />
-                <Col>
-                    <SplashButton />
-                </Col>
-            </div>
-        )
-    }
+const SplashCanvas: React.FC = () => {
+    return (
+        <div>
+            <SplashHeader />
+            <Col>
+                <SplashButton text="Trivia"/>
+                <SplashButton text="Jeopardy"/>
+            </Col>
+        </div>
+    )
 }
 
 export default SplashCanvas;

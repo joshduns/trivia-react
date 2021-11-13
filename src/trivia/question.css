@@ -1,0 +1,8 @@
+#questionTile {
+    height: 150px;
+    width: 150px;
+    margin: 15px 20px 15px 20px;
+    font-size: 18px;
+    background-color: #00E5FF;
+    color: black;
+}
