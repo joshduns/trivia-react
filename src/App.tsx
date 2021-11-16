@@ -8,17 +8,30 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function App() {
-  return (
-    <Container fluid className="App">
-      <Row className="bumper"><Col></Col></Row>
-      <Row className="body">
-        <Splash />
-        <TriviaBoard questions={[]} />
-      </Row>
-      <Row className="justify-content-center bumper"><ExitButton text="Exit"/></Row>
-    </Container>
-  );
+
+type appState = {
+  mode: string
 }
 
-export default App;
+type appProps = {
+  questions?: any[]
+}
+
+export default class App extends React.Component<appProps, appState> {
+  state: appState = {
+    mode: ''
+  }
+
+  render() {
+    return (
+      <Container fluid className="App">
+        <Row className="bumper"><Col></Col></Row>
+        <Row className="body">
+          <Splash />
+          <TriviaBoard questions={[]} />
+        </Row>
+        <Row className="justify-content-center bumper"><ExitButton text="Exit"/></Row>
+      </Container>
+    );
+  }
+}
