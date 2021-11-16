@@ -7,10 +7,7 @@ type Props = {
 }
 
 const SplashButton: React.FC<Props> = ({text}) => {
-    return (
-        <div>
-            <Button id="gameButton" variant="contained" size="large">{text}</Button>
-        </div>)
+    return <Button id="gameButton" variant="contained" size="large">{text}</Button>      
 }
 
 export default SplashButton;

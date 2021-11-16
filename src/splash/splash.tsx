@@ -2,11 +2,15 @@ import * as React from 'react';
 import SplashButton from './button';
 import SplashHeader from './welcome';
 import Col from 'react-bootstrap/Col';
+import CSS from 'csstype';
 
+const canvasStyle: CSS.Properties = {
+    display: 'none'
+}
 
-const SplashCanvas: React.FC = () => {
+const Splash: React.FC = () => {
     return (
-        <div>
+        <div style={canvasStyle}>
             <SplashHeader />
             <Col>
                 <SplashButton text="Trivia"/>
@@ -16,4 +20,4 @@ const SplashCanvas: React.FC = () => {
     )
 }
 
-export default SplashCanvas;
+export default Splash;
