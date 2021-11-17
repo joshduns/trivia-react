@@ -35,7 +35,7 @@ class Splash extends React.Component<splashProps, splashState> {
     }
 
     handleExit() {
-        this.setState({playing: false})
+        this.setState({playing: false, playingTrivia: false, playingJeop: false })
       }
     
     handleTrivia() {
@@ -63,6 +63,7 @@ class Splash extends React.Component<splashProps, splashState> {
                 <Row className="bumper"><Col></Col></Row>
                 <Row className="body">
                     { !this.state.playing ? choices : null }
+                    { this.state.playingTrivia ? <TriviaBoard questions={[]} /> : null }
                 </Row>
                 <Row className="justify-content-center bumper">
                     {this.state.playing ? <ExitButton handleExit={this.handleExit} text="Exit"/> : null }
