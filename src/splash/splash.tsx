@@ -39,11 +39,11 @@ class Splash extends React.Component<splashProps, splashState> {
       }
     
     handleTrivia() {
-        this.setState(state => ({playing: true}))
+        this.setState(state => ({playing: true, playingTrivia: true, playingJeop: false}))
     }
 
     handleJeop() {
-        this.setState(state => ({playing: true}))
+        this.setState(state => ({playing: true, playingTrivia: false, playingJeop: true}))
     }
 
     render() {
