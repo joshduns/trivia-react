@@ -1,0 +1,8 @@
+.row {
+    display: inline-block;
+    align-items: center
+}
+
+.bumper {
+    align-items: center
+}
