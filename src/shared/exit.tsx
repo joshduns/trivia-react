@@ -1,13 +1,17 @@
-import * as React from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
 import './exit.css';
 
-type Props = {
+
+interface Props {
     text: string;
+    handleExit: () => void;
 }
 
-const ExitButton: React.FC<Props> = ({text}) => {
-    return <Button id="exitButton" variant="contained" size="large">{text}</Button>      
+class ExitButton extends React.Component<Props> {
+    render() {
+        return <Button id="exitButton" variant="contained" size="large" onClick={this.props.handleExit}>{this.props.text}</Button> 
+    }     
 }
 
 export default ExitButton;
