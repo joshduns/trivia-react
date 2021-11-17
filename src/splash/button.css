@@ -1,0 +1,9 @@
+#gameButton {
+    height: 50px;
+    width: 300px;
+    margin: 30px;
+    font-size: 22px;
+    background-color: #00E5FF;
+    color: black;
+    font-weight: bold;
+}
