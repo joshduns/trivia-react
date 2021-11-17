@@ -1,0 +1,9 @@
+#shuffleButton {
+    height: 75px;
+    width: 450px;
+    margin: 20px 35px 50px 35px;
+    font-size: 18px;
+    background-color: #00E5FF;
+    color: black;
+    display:inline-block;
+}
