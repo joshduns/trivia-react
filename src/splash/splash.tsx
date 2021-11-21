@@ -52,8 +52,8 @@ class Splash extends React.Component<splashProps, splashState> {
             choices =   <div>
                             <SplashHeader />
                             <Col>
-                                <SplashButton text="Trivia" handleGame={this.handleTrivia} />
-                                <SplashButton text="Jeopardy" handleGame={this.handleJeop} />
+                                <SplashButton text="Trivia" handleGame={this.handleTrivia} disabled={false} />
+                                <SplashButton text="Jeopardy" handleGame={this.handleJeop} disabled={true} />
                             </Col>
                         </div>
         }
