@@ -13,7 +13,7 @@ export interface question {
     answer: string,
 }
 
-const jservice = 'https://jservice.io/api/random?count=5';
+const jservice = 'https://jservice.io/api/random?count=10';
 
 const TriviaBoard = () => {
     const [questions, setQuestions] = useState<Array<question>>([{category: '', question: '', answer: ''},
@@ -29,14 +29,27 @@ const TriviaBoard = () => {
         let q: question[] = [];
         if (res.ok) {
             body.forEach( (item: any) => {
-                q.push({'category': item.category.title, 'question': item.question, 'answer': item.answer})
+                if (questionValid(item)){
+                    q.push({'category': item.category.title, 'question': item.question, 'answer': item.answer})
+                }
             })
-            setQuestions(q);
-            setGotQuestions(true);
+            if (q.length >= 5) {
+                setQuestions(q);
+                setGotQuestions(true);
+            } else {
+                alert('Unable to get valid questions from JService. Try getting more questions.')
+            }
         } else {
             alert('Unable to get questions from JService!')
         }
-        
+    }
+
+    const questionValid = (ques: any) => {
+        if (ques.category.title === '' || ques.question === '' || ques.answer === '') {
+            return false
+        } else{
+            return true
+        }
     }
 
     return (

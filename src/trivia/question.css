@@ -1,5 +1,5 @@
 #questionTile {
-    height: 250px;
+    min-height: 250px;
     width: 400px;
     margin: 25px 35px 25px 35px;
     font-size: 18px;
