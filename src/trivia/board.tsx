@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 
 
 
-interface question {
+export interface question {
     category: string,
     question: string,
     answer: string,
@@ -19,12 +19,9 @@ const TriviaBoard = () => {
     const [questions, setQuestions] = useState<Array<question>>([{category: '', question: '', answer: ''},
                                                                 {category: '', question: '', answer: ''},
                                                                 {category: '', question: '', answer: ''},
-                                                                {category: '', question: '', answer: ''},
-                                                                {category: '', question: '', answer: ''}
-                                                                ]);
+                                                                {category: '', question: '', answer: ''}, 
+                                                                {category: '', question: '', answer: ''}]);
     const [gotQuestions, setGotQuestions] = useState<boolean>(false);
-    const [gameComplete, setComplete] = useState<boolean>(false);
-
 
     async function handleShuffle() {
         const res = await fetch(jservice);
@@ -44,13 +41,13 @@ const TriviaBoard = () => {
         <Container fluid className="trivia-board">
             <ShuffleButton text="Get Some Trivia" handleShuffle={handleShuffle} disableButton={gotQuestions}  />
             <Row className="justify-content-center">
-                <QuestionTile subject={questions[0].category} question={questions[0].question} answer={questions[0].answer} />
-                <QuestionTile subject={questions[1].category} question={questions[1].question} answer={questions[1].answer} />
-                <QuestionTile subject={questions[2].category} question={questions[2].question} answer={questions[2].answer} />
+                {gotQuestions && <QuestionTile questionInfo={questions[0]} />}
+                {gotQuestions && <QuestionTile questionInfo={questions[1]} />}
+                {gotQuestions && <QuestionTile questionInfo={questions[2]} />}
             </Row>
             <Row className="justify-content-center">
-                <QuestionTile subject={questions[3].category} question={questions[3].question} answer={questions[3].answer} />
-                <QuestionTile subject={questions[4].category} question={questions[4].question} answer={questions[4].answer} />
+                {gotQuestions && <QuestionTile questionInfo={questions[3]} />}
+                {gotQuestions && <QuestionTile questionInfo={questions[4]} />}
             </Row>
         </Container>
     )

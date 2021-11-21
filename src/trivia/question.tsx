@@ -1,18 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import './question.css';
+import { question } from './board';
 
 interface questionProps {
-    subject: string,
-    question: string,
-    answer: string,
+    questionInfo: question
 }
 
-const QuestionTile = ({subject, question, answer}: questionProps) => {
-    const [step, setStep] = useState(1);
+const QuestionTile = ({questionInfo}: questionProps) => {
+    const initialStep = () => 1;
+    const initialText = () => questionInfo.category;
+    const [step, setStep] = useState(initialStep);
+    const [display, setDisplay] = useState(initialText);
+    console.log('category: ', questionInfo.category);
 
-    return <Button id="questionTile" variant="contained" size="large">{subject}</Button>
-}
+    const handleClick = () => {
+        if (step === 1) {
+            setDisplay(questionInfo.question);
+            setStep(2);
+        } else if (step === 2) {
+            setDisplay(questionInfo.answer);
+            setStep(3);
+        } else if (step === 3) {
+            setDisplay(questionInfo.category);
+            setStep(1);
+        } 
+    }
+
+    return <Button id="questionTile" onClick={handleClick} variant="contained" size="large">{display}</Button>
+};
 
 
 export default QuestionTile;
