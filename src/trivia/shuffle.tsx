@@ -10,6 +10,7 @@ type shuffleState = {
 type shuffleProps = {
     text: string,
     handleShuffle: () => void;
+    shuffled: boolean,
 }
 
 class Shuffle extends React.Component<shuffleProps, shuffleState> {

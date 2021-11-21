@@ -63,7 +63,7 @@ class Splash extends React.Component<splashProps, splashState> {
                 <Row className="bumper"><Col></Col></Row>
                 <Row className="body">
                     { !this.state.playing ? choices : null }
-                    { this.state.playingTrivia ? <TriviaBoard questions={[]} /> : null }
+                    { this.state.playingTrivia ? <TriviaBoard /> : null }
                 </Row>
                 <Row className="justify-content-center bumper">
                     {this.state.playing ? <ExitButton handleExit={this.handleExit} text="Exit"/> : null }

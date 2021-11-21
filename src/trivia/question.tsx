@@ -1,10 +1,22 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import './question.css';
 
+interface questionProps {
+    subject: string,
+    question: string,
+    answer: string,
+}
 
-const QuestionTile = () => {
-    return <Button id="questionTile" variant="contained" size="large">question</Button>
+interface questionState {
+    step: number,
+}
+
+
+const QuestionTile = ({subject, question, answer}: questionProps) => {
+    const [step, setStep] = useState(1);
+
+    return <Button id="questionTile" variant="contained" size="large">{subject}</Button>
 }
 
 
