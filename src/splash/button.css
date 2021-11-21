@@ -8,3 +8,9 @@
     font-weight: bold;
     box-shadow: 0 3px 20px 10px #680068;
 }
+
+#gameButton:disabled {
+    
+    background-color: #cccccc;
+    color: rgb(136, 136, 136);
+}
