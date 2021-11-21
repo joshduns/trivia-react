@@ -8,7 +8,7 @@
     color: black;
     display:inline-block;
     border-radius: 200%;
-    box-shadow: 0 30px 100px 50px #680068;
+    box-shadow: 0 30px 100px 25px #680068;
 }
 
 #shuffleButton:disabled {
