@@ -48,3 +48,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Generate Component
 
 `npx generate-react-cli component <component name>`
+
+## Deploy to GitHub Pages
+
+`$ npm run deploy`
