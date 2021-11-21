@@ -8,11 +8,6 @@ interface questionProps {
     answer: string,
 }
 
-interface questionState {
-    step: number,
-}
-
-
 const QuestionTile = ({subject, question, answer}: questionProps) => {
     const [step, setStep] = useState(1);
 

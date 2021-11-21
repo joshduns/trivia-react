@@ -1,19 +1,20 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import styles from './ShuffleButton.module.css';
+import './ShuffleButton.css';
 
 
 interface shuffleProps {
   text: string,
   handleShuffle: any,
+  disableButton: boolean,
 }
 
-const ShuffleButton = ({text, handleShuffle}: shuffleProps) => {
+const ShuffleButton = ({text, handleShuffle, disableButton}: shuffleProps) => {
 
   return (
-    <div className={styles.ShuffleButton}>
-    <Button id="shuffleButton" variant="contained" size="small" onClick={handleShuffle} >{text}</Button>
-  </div>
+    <div>
+      <Button id="shuffleButton" variant="contained" size="small" onClick={handleShuffle} disabled={disableButton}>{text}</Button>
+    </div>
   )
 };
 
