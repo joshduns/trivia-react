@@ -28,7 +28,9 @@ const TriviaBoard = () => {
         const body = await res.json();
         let q: question[] = [];
         if (res.ok) {
-            body.forEach( (item: any) => {q.push({'category': item.category.title, 'question': item.question, 'answer': item.answer})})
+            body.forEach( (item: any) => {
+                q.push({'category': item.category.title, 'question': item.question, 'answer': item.answer})
+            })
             setQuestions(q);
             setGotQuestions(true);
         } else {
@@ -39,7 +41,7 @@ const TriviaBoard = () => {
 
     return (
         <Container fluid className="trivia-board">
-            <ShuffleButton text="Get Some Trivia" handleShuffle={handleShuffle} disableButton={gotQuestions}  />
+            {!gotQuestions && <ShuffleButton text="Get Some Trivia" handleShuffle={handleShuffle} disableButton={gotQuestions}  />}
             <Row className="justify-content-center">
                 {gotQuestions && <QuestionTile questionInfo={questions[0]} />}
                 {gotQuestions && <QuestionTile questionInfo={questions[1]} />}

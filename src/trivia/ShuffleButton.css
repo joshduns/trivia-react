@@ -1,11 +1,14 @@
 #shuffleButton {
-    height: 75px;
-    width: 450px;
+    height: 300px;
+    width: 300px;
     margin: 20px 35px 50px 35px;
     font-size: 22px;
+    font-weight: bold;
     background-color: #00E5FF;
     color: black;
     display:inline-block;
+    border-radius: 200%;
+    box-shadow: 0 30px 100px 50px #680068;
 }
 
 #shuffleButton:disabled {
