@@ -1,17 +1,19 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import './exit.css';
+import IconButton from '@mui/material/IconButton';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 interface Props {
-    text: string;
     handleExit: () => void;
 }
 
-class ExitButton extends React.Component<Props> {
-    render() {
-        return <Button id="exitButton" variant="contained" size="large" onClick={this.props.handleExit}>{this.props.text}</Button> 
-    }     
+const ExitButton = ({handleExit}: Props) => {
+    return (
+        <IconButton color="secondary" aria-label="home" size="large" onClick={handleExit}>
+            <HomeIcon fontSize="inherit" />
+        </IconButton> 
+    )
 }
 
 export default ExitButton;

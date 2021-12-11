@@ -1,7 +1,7 @@
 #questionTile {
-    min-height: 250px;
-    width: 400px;
-    margin: 25px 35px 25px 35px;
+    min-height: 225px;
+    max-width: 375px;
+    margin: 15px 20px 15px 20px;
     font-size: 18px;
     font-weight: bold;
     background-color: #00E5FF;

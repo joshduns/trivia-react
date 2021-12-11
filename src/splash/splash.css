@@ -4,14 +4,14 @@
   }
   
   .bumper {
-      height: 10vh;
-      background-color: #311B92;
-      top: 0;
-      left: 0;
-  }
+    height: 6vh;
+    background-color: #311B92;
+    top: 0;
+    left: 0;
+}
   
   .body {
-    height: 80vh;
+    height: 88vh;
     background-color: #0e1342;
     vertical-align: middle;
     display: flex;
