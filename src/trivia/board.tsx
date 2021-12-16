@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuestionTile from './question';
 import ShuffleButton from './ShuffleButton';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-
 
 
 export interface question {
@@ -53,18 +50,16 @@ const TriviaBoard = () => {
     }
 
     return (
-        <Container fluid className="justify-content-center trivia-board">
+        <div className="triviaBoard">
             {!gotQuestions && <ShuffleButton text="Get Some Trivia" handleShuffle={handleShuffle} disableButton={gotQuestions}  />}
-            <Row className="justify-content-center">
+            <div className="topRow">
                 {gotQuestions && <QuestionTile questionInfo={questions[0]} />}
                 {gotQuestions && <QuestionTile questionInfo={questions[1]} />}
                 {gotQuestions && <QuestionTile questionInfo={questions[2]} />}
-            </Row>
-            <Row className="justify-content-center">
                 {gotQuestions && <QuestionTile questionInfo={questions[3]} />}
                 {gotQuestions && <QuestionTile questionInfo={questions[4]} />}
-            </Row>
-        </Container>
+            </div>
+        </div>
     )
 }
 
