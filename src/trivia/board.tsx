@@ -53,7 +53,7 @@ const TriviaBoard = () => {
     }
 
     return (
-        <Container fluid className="trivia-board">
+        <Container fluid className="justify-content-center trivia-board">
             {!gotQuestions && <ShuffleButton text="Get Some Trivia" handleShuffle={handleShuffle} disableButton={gotQuestions}  />}
             <Row className="justify-content-center">
                 {gotQuestions && <QuestionTile questionInfo={questions[0]} />}
