@@ -49,26 +49,26 @@ class Splash extends React.Component<splashProps, splashState> {
     render() {
         let choices;
         if (!this.state.playing) {
-            choices =   <div>
+            choices =   <div className="alignCenter">
                             <SplashHeader />
-                            <Col>
+                            <div className="chooseButtons">
                                 <SplashButton text="Trivia" handleGame={this.handleTrivia} disabled={false} />
                                 <SplashButton text="Jeopardy" handleGame={this.handleJeop} disabled={true} />
-                            </Col>
+                            </div>
                         </div>
         }
 
         return (
-            <Container fluid className="App">
-                <Row className="bumper"><Col></Col></Row>
-                <Row className="body">
+            <body className="app">
+                <header className="header"></header>
+                <main className="body">
                     { !this.state.playing ? choices : null }
                     { this.state.playingTrivia ? <TriviaBoard /> : null }
-                </Row>
-                <Row className="justify-content-center bumper">
-                    {this.state.playing ? <ExitButton handleExit={this.handleExit} text="Exit"/> : null }
-                </Row>
-            </Container>
+                </main>
+                <footer className="footer">
+                    {this.state.playing ? <ExitButton handleExit={this.handleExit} /> : null }
+                </footer>
+            </body>
         )
     }
 }

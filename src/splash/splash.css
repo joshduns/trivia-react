@@ -1,20 +1,57 @@
-.App {
-    width: 100%;
-    text-align: center;
-  }
+body {
+  margin: 0;
+  background-color: #0e1342;
+}
+
+.app {
+  margin: 0;
+  height: 100vh;
   
-  .bumper {
-      height: 10vh;
-      background-color: #311B92;
-      top: 0;
-      left: 0;
-  }
-  
-  .body {
-    height: 80vh;
-    background-color: #0e1342;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  /* grid settings */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+}
+
+.app header {
+  grid-area: header;
+  background-color: #311B92;
+}
+
+.app main {
+  grid-area: main;
+  padding: 15px 25px 15px 25px;
+  overflow: auto;
+  background-color: #0e1342;
+  text-align: center;
+}
+
+.app footer {
+  grid-area: footer;
+  background-color: #311B92;
+  text-align: center;
+}
+
+.app .alignCenter {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.chooseHeader {
+  color: white;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.chooseButtons {
+  display: block;
+}

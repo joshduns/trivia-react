@@ -1,11 +1,13 @@
-#questionTile {
-    min-height: 250px;
-    width: 400px;
-    margin: 25px 35px 25px 35px;
+#questionButton {
+    height: 275px;
+    width: 375px;
+    margin: 15px 20px 15px 20px;
     font-size: 18px;
     font-weight: bold;
     background-color: #00E5FF;
     color: black;
-    display:inline-block;
-    box-shadow: 0 3px 40px 7px #680068;
+    display: inline-block;
+    box-shadow: 0 3px 15px 2px #680068;
+    padding: 20px;
 }
+
