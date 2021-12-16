@@ -1,8 +1,13 @@
-.row {
-    display: inline-block;
-    align-items: center
+.triviaBoard {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.bumper {
-    align-items: center
+.topRow {
+    width: 100%;
 }
+

@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import './question.css';
 import { question } from './board';
+
 
 interface questionProps {
     questionInfo: question
@@ -27,7 +28,7 @@ const QuestionTile = ({questionInfo}: questionProps) => {
         } 
     }
 
-    return <Button id="questionTile" onClick={handleClick} variant="contained" size="large">{display}</Button>
+    return <Button id="questionButton" onClick={handleClick}>{display}</Button>
 };
 
 
