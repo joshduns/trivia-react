@@ -52,3 +52,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Deploy to GitHub Pages
 
 `$ npm run deploy`
+
+## UI component library
+
+The UI components for this app were created using the Material UI (MUI) library for React. [Material UI for React](https://mui.com/)
